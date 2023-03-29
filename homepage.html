@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+<h2>  This is the <strong> Homepage </strong> </h2><br/><br/>
+<h2> The data </h2>
+<table class="table table-striped">
+	<th> Id </th>
+	<th> Name </th>
+	<th> Number </th>
+	<small> To edit the data go to upload</small>
+	{% for erp in erps %}
+	<tr>
+		<h4>
+			<td> {{erp.id}}.</td>
+			<td> {{erp.name}} </td>
+			<td> {{erp.number}} </td>
+		</h4>
+	</tr>
+	{% endfor %}
+</table>
+{%endblock%}
+

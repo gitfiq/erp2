@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<form action="/update/{{updates.id}}" method="POST">
+  <div class="form-group">
+    <label for='nm'>Update Name: </label> 
+    <input type="text" class="form-control" id="nm" name="nm" placeholder="Enter your name" required='required' value={{updates.name}}>
+  <br/>
+
+    <label for='num'>Update Number: </label> 
+    <input type="text" class="form-control" id="num" name="num" placeholder="Enter your number" required='required' value={{updates.number}}>
+  </div><br/><br/>
+
+  <button type="submit" class="btn btn-secondary" >Submit</button>
+</form><br/><br/>
+
+
+{%endblock%}

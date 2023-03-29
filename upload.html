@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<form action="uploads" method="POST">
+  <div class="form-group">
+    <label for='nm'>Name: </label> 
+    <input type="text" class="form-control" id="nm" name="nm" placeholder="Enter your name" required='required' >
+  <br/>
+
+    <label for='num'>Number: </label> 
+    <input type="number" class="form-control" id="num" name="num" placeholder="Enter your number" required='required'>
+  </div><br/><br/>
+
+  <button type="submit" class="btn btn-secondary" >Submit</button>
+</form><br/><br/>
+
+<table class="table table-striped">
+	<th> Id </th>
+	<th> Name </th>
+	<th> Number </th>
+	{% for erp in erps %}
+	<tr>
+		<h4>
+			<td> {{erp.id}}.</td>
+			<td> {{erp.name}} <a href="/update/{{erp.id}}" class="btn btn-outline-secondary btn-sm"> Update </a> <a href="/delete/{{erp.id}}" class="btn btn-outline-danger btn-sm"> Delete </a> </td>
+			<td> {{erp.number}} </td>
+		</h4>
+	</tr>
+	{% endfor %}
+</table>
+
+{%endblock%}

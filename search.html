@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+
+{% if results %}
+  <table class="table table-striped">
+    <th> Id </th>
+    <th> Name </th>
+    <th> Number </th>
+    {% for result in results %}
+    <tr>
+      <h4>
+          <td>{{result.id}}.</td>
+          <td> {{result.name}} <a href="/update/{{result.id}}" class="btn btn-outline-secondary btn-sm"> Update </a> <a href="/delete/{{result.id}}" class="btn btn-outline-danger btn-sm"> Delete </a> </td>
+          <td> {{result.number}}</td>
+      </h4>
+    </tr>
+    {% endfor %}
+  </table>
+
+{% elif search_name %}
+  <h5> {{search_name}} is not in the database </h5>
+
+{% else %}
+  <h5> Id {{search_id}} is not in the database </h5>
+
+{% endif %}
+{% endblock %}
